@@ -1,0 +1,21 @@
+<div class="pageWrapper">
+  <div class="toolbar">
+    <button
+      class="menu_button"
+      type="button"
+      mat-button
+      (click)="drawer.toggle()"
+    >
+      <mat-icon class="icon">menu</mat-icon>
+    </button>
+    <app-toolbar class="toolbar"></app-toolbar>
+  </div>
+  <mat-drawer-container class="content">
+    <mat-drawer #drawer mode="side"
+      ><app-navbar (abrir)="abrirFormulario($event)"></app-navbar
+    ></mat-drawer>
+    <mat-drawer-content>
+      <app-content [formulario]="formulario"></app-content>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
